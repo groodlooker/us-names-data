@@ -28,6 +28,12 @@ view: names {
     sql: ${TABLE}.gender ;;
   }
 
+  dimension: gender_encode {
+    type: number
+    sql: case ${gender}
+          when 'M' then 1 else 0 end;;
+  }
+
   dimension: name {
     type: string
     sql: ${TABLE}.name ;;

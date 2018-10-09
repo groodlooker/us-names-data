@@ -1,5 +1,7 @@
 view: names_by_year {
     derived_table: {
+      datagroup_trigger: us_names_data_default_datagroup
+      indexes: ["year"]
       explore_source: names {
         column: name_count {}
         column: year {}

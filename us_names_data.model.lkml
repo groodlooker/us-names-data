@@ -16,4 +16,12 @@ explore: names {
     type: inner
     relationship: many_to_one
   }
+  join: name_ranks {
+    fields: [name_ranks.rank_by_gender_year]
+    sql_on: ${names.year} = ${name_ranks.year}
+    and ${names.gender} = ${name_ranks.gender}
+    and ${names.name} = ${name_ranks.name};;
+    type: inner
+    relationship: many_to_one
+  }
 }

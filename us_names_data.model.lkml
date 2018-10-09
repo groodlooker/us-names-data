@@ -10,4 +10,10 @@ datagroup: us_names_data_default_datagroup {
 
 persist_with: us_names_data_default_datagroup
 
-explore: names {}
+explore: names {
+  join: names_by_year {
+    sql_on: ${names.year} = ${names_by_year.year} ;;
+    type: inner
+    relationship: many_to_one
+  }
+}

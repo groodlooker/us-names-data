@@ -24,4 +24,11 @@ explore: names {
     type: inner
     relationship: many_to_one
   }
+  join: name_encoding {
+    fields: [name_encoding.name_encode]
+    sql_on: ${names.name} = ${name_encoding.name}
+    and ${names.gender} = ${name_encoding.gender};;
+    type: inner
+    relationship: many_to_one
+  }
 }

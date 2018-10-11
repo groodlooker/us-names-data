@@ -30,6 +30,7 @@ view: names {
 
   dimension: gender_encode {
     type: number
+    view_label: "Data Science Fields"
     sql: case ${gender}
           when 'M' then 1 else 0 end;;
   }

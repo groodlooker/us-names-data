@@ -28,12 +28,12 @@ view: names {
     sql: ${TABLE}.gender ;;
   }
 
-  dimension: gender_encode {
-    type: number
-    view_label: "Data Science Fields"
-    sql: case ${gender}
-          when 'M' then 1 else 0 end;;
-  }
+#   dimension: gender_encode {
+#     type: number
+#     view_label: "Data Science Fields"
+#     sql: case ${gender}
+#           when 'M' then 1 else 0 end;;
+#   }
 
   dimension: name {
     type: string
@@ -55,12 +55,12 @@ view: names {
     hidden: yes
   }
 
-  measure: percentage_of_male {
-    type: number
-    sql: (1.0 * ${name_count}) / ${names_by_year.total_count_male} ;;
-    value_format_name: percent_1
-    hidden: no
-  }
+#   measure: percentage_of_male {
+#     type: number
+#     sql: (1.0 * ${name_count}) / ${names_by_year.total_count_male} ;;
+#     value_format_name: percent_1
+#     hidden: no
+#   }
 
   measure: name_count_female {
     type: sum
@@ -72,22 +72,22 @@ view: names {
     hidden: yes
   }
 
-  measure: percentage_of_female {
-    type: number
-    sql: (1.0* ${name_count}) / ${names_by_year.total_count_female} ;;
-    value_format_name: percent_1
-    hidden: no
-  }
-
-  measure: percentage {
-    type: number
-    value_format_name: percent_1
-    sql: case max(${gender})
-          when 'M' then ${percentage_of_male}
-          when 'F' then ${percentage_of_female}
-          end;;
-    view_label: "Augmented Data"
-  }
+#   measure: percentage_of_female {
+#     type: number
+#     sql: (1.0* ${name_count}) / ${names_by_year.total_count_female} ;;
+#     value_format_name: percent_1
+#     hidden: no
+#   }
+#
+#   measure: percentage {
+#     type: number
+#     value_format_name: percent_1
+#     sql: case max(${gender})
+#           when 'M' then ${percentage_of_male}
+#           when 'F' then ${percentage_of_female}
+#           end;;
+#     view_label: "Augmented Data"
+#   }
 
   measure: name_count {
     type: sum

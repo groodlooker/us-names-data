@@ -32,3 +32,13 @@ explore: names {
     relationship: many_to_one
   }
 }
+
+explore: name_aggregate {
+  join: name_encoding {
+    fields: [name_encoding.name]
+    sql_on: ${name_aggregate.name} = ${name_encoding.name}
+    and ${name_aggregate.gender} = ${name_encoding.gender};;
+    relationship: one_to_one
+  }
+
+}

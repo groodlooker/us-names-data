@@ -11,10 +11,8 @@ view: name_encoding {
       }
     }
     dimension: name {
-      hidden: yes
     }
     dimension: gender {
-      hidden: yes
     }
     dimension: name_encode {
       type: number
